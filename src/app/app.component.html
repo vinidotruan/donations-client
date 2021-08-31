@@ -1,2 +1,6 @@
-
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)" class="teste">
+	<div class="container-fluid mt-5">
+		<router-outlet #outlet="outlet"></router-outlet>
+	</div>
+</div>
+<app-footer></app-footer>

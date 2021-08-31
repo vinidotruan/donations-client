@@ -1,0 +1,23 @@
+$body-bg: #26263e;
+$card-bg: $body-bg;
+$card-color: $white;
+$border-radius: 25px;
+
+
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
+$box-shadow:                  0 .5rem 1rem rgba($black, .4);
+$box-shadow-lg:               0 1rem 3rem rgba($black, .5);
+
+.material-icons, .material-icons-outlined {
+	color: $white;
+}
+
+body {
+	color: white !important;
+}
+
+@import "~bootstrap/scss/bootstrap";
+
+.bg-primary {
+	background-color: #26263e !important;
+}

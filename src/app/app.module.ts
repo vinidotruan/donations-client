@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { getFirestore } from 'firebase/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ActionsComponent } from './actions/actions.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAkewZOdUa47WoH-6ROZtjoEq3tc4e9BcU",
@@ -24,13 +27,16 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    ActionsComponent
+    ActionsComponent,
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
