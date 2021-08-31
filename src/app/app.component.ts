@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActionsService } from './services/actions.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'donation-client';
+  public actions: any;
+  constructor( private actionsService: ActionsService ) {
+    this.actionsService.getActions().subscribe(
+      response => this.actions = response
+    )
+  }
 }
