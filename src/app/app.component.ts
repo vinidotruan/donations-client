@@ -2,6 +2,7 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ActionsService } from './services/actions.service';
+import { AuthenticationsService } from './services/authentications.service';
 
 export const slideInAnimation =
   trigger('routeAnimations', [
@@ -87,10 +88,14 @@ export const slideInAnimation =
 export class AppComponent {
   public actions: any;
 
-  constructor( private actionsService: ActionsService ) {
+  constructor(
+    private actionsService: ActionsService,
+    private authenticationService: AuthenticationsService
+  ) {
     this.actionsService.getActions().subscribe(
       response => this.actions = response
-    )
+    );
+    
   }
 
   prepareRoute(outlet: RouterOutlet) {
