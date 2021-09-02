@@ -38,7 +38,6 @@ export class AuthenticationsService {
     return this.angularFireAuth.signInWithPopup(provider)
     .then(result => {
       this.ngZone.run(() => {
-        console.log(result)
         this.router.navigate(['login'])
       })
     })

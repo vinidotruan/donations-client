@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { ActionComponent } from './action/action.component';
+import { ActionFormComponent } from './action-form/action-form.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAkewZOdUa47WoH-6ROZtjoEq3tc4e9BcU",
@@ -31,7 +33,9 @@ export const firebaseConfig = {
     ActionsComponent,
     FooterComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    ActionComponent,
+    ActionFormComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

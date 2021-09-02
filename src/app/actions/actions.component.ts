@@ -11,7 +11,10 @@ export class ActionsComponent implements OnInit {
   public actions: any;
   constructor( private actionsService: ActionsService ) {
     this.actionsService.getActions().subscribe(
-      response => this.actions = response
+      response => {
+        this.actions = response;
+        console.log(response)
+      }
     )
   }
 

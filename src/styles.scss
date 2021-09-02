@@ -11,3 +11,9 @@ body {
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+.btn-rainbow {
+	background: linear-gradient(55deg, #56E3DB, #7371FF);
+	font-weight: bold;
+	color: white;
+}

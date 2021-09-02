@@ -16,6 +16,20 @@ body {
 	color: white !important;
 }
 
+input, textarea, select, input[type=file] {
+	background-color: #202037 !important;
+	border: none !important;
+	color: white !important;
+
+	&:focus {
+		box-shadow: 0 0 0 0.2rem rgba(51, 51, 102, 0.69) !important;
+	}
+}
+
+textarea {
+	resize: none !important;
+}
+
 @import "~bootstrap/scss/bootstrap";
 
 .bg-primary {
