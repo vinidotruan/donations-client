@@ -11,10 +11,14 @@ body {
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+@import "./assets/scss/sketchs.scss";
 * {
   transition: 0.3s;
 }
 
+.bg-rainbow {
+  background: linear-gradient(to top left, #2926bd, #ff3d00);
+}
 .btn-rainbow {
   background: linear-gradient(to top left, #2926bd, #ff3d00);
   //   background: linear-gradient(55deg, #56e3db, #7371ff);

@@ -1,31 +1,32 @@
-
 <div class="row mb-5">
-	<div class="col-sm-12 mb-4" *ngFor="let action of actions">
-		<div class="card h-100 rounded shadow-lg">
-			<img [src]="action?.image" alt="" srcset="" class="rounded-top">
-			<div class="card-body">
-				<div class="card-title">
-					<h3>
-						<b>
-							{{ action?.name }}
-						</b>
-					</h3>
-				</div>
-				<div class="card-text">
-					{{ action?.id }}...
-				</div>
-				<div class="card-text">
-					{{ action?.description.substring(0, 300) }}...
-				</div>
-			</div>
-			<div class="card-footer d-flex justify-content-between">
-				<span class="material-icons-outlined">
-					favorite_border
-				</span>
-				<span class="material-icons-outlined" [routerLink]="'/action/'+action?.id">
-					east
-				</span>
-			</div>
-		</div>
-	</div>
+  <div class="col-sm-12 mb-4" *ngFor="let action of actions">
+    <div class="card h-100 rounded shadow-lg">
+      <div
+        class="image-wrapper"
+        [ngStyle]="{ backgroundImage: 'url(' + action?.image + ')' }"
+      ></div>
+      <div class="card-body">
+        <div class="card-title">
+          <h3>
+            <b>
+              {{ action?.name }}
+            </b>
+          </h3>
+        </div>
+        <div class="card-text">{{ action?.id }}...</div>
+        <div class="card-text">
+          {{ action?.description.substring(0, 300) }}...
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <span class="material-icons-outlined"> favorite_border </span>
+        <span
+          class="material-icons-outlined"
+          [routerLink]="'/action/' + action?.id"
+        >
+          east
+        </span>
+      </div>
+    </div>
+  </div>
 </div>

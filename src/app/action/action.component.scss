@@ -1,0 +1,16 @@
+.image-wrapper {
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text {
+  position: relative;
+  padding-top: 1rem;
+
+  .badge {
+    font-weight: bold;
+  }
+}

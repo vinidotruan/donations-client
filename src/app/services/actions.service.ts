@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
+  DocumentSnapshot,
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Action } from '../shared/models/actions';
@@ -22,7 +23,8 @@ export class ActionsService {
   };
 
   getAction = (id: string): Observable<Observable<Action> | undefined> => {
-    return this.itemsCollection.doc(id).valueChanges();
+    this.itemsCollection.get({});
+    return this.itemsCollection.doc(id).valueChanges({ idField: 'id' });
   };
 
   store = (data: any) => {
