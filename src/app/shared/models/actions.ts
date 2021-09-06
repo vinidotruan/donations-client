@@ -1,6 +1,7 @@
 import { AngularFirestoreDocument } from "@angular/fire/compat/firestore";
+import { DocumentSnapshot } from '@firebase/firestore';
 
-export interface Action extends AngularFirestoreDocument{
+export interface Action extends AngularFirestoreDocument {
 	category: string;
 	contact: string;
 	createdAt: string;

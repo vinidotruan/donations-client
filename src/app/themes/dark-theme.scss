@@ -2,36 +2,41 @@ $body-bg: #26263e;
 $card-bg: $body-bg;
 $card-color: $white;
 $border-radius: 25px;
+$lightblue: #56e3db;
 
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.4);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.5);
 
-$box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
-$box-shadow:                  0 .5rem 1rem rgba($black, .4);
-$box-shadow-lg:               0 1rem 3rem rgba($black, .5);
-
-.material-icons, .material-icons-outlined {
-	color: $white;
+$dark-bg: #202037;
+.material-icons,
+.material-icons-outlined {
+  color: $white;
 }
 
 body {
-	color: white !important;
+  color: white !important;
 }
 
-input, textarea, select, input[type=file] {
-	background-color: #202037 !important;
-	border: none !important;
-	color: white !important;
+input,
+textarea,
+select,
+input[type="file"] {
+  background-color: $dark-bg !important;
+  border: none !important;
+  color: white !important;
 
-	&:focus {
-		box-shadow: 0 0 0 0.2rem rgba(51, 51, 102, 0.69) !important;
-	}
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(51, 51, 102, 0.69) !important;
+  }
 }
 
 textarea {
-	resize: none !important;
+  resize: none !important;
 }
 
 @import "~bootstrap/scss/bootstrap";
 
 .bg-primary {
-	background-color: #26263e !important;
+  background-color: #26263e !important;
 }

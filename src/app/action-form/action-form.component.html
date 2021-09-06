@@ -1,53 +1,180 @@
 <div class="row mb-5">
-	<div class="col-12 mt-2">
-		<form>
-			<div class="row mb-3">
-				<div class="col-12">
-					<label for="exampleInputEmail1" class="form-label">Name</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</div>
-			<div class="row mb-3">
-				<div class="col-12">
-					<label for="exampleInputEmail1" class="form-label">Contact</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</div>
-			<div class="row mb-3">
-				<div class="col-12">
-					<label for="exampleInputEmail1" class="form-label">Localization</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</div>
-			<div class="row mb-3">
-				<div class="col-12">
-					<label for="exampleInputEmail1" class="form-label">Postal Code</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</div>
-			<div class="row mb-3">
-				<div class="col-12">
-					<label for="exampleInputEmail1" class="form-label">Description</label>
-					<textarea class="form-control" aria-label="With textarea" rows="5"></textarea>
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</div>
-			<div class="row mb-3">
-				<div class="col-12">
-					<label for="exampleInputEmail1" class="form-label">Select Image</label>
-					<input class="form-control" type="file" id="formFile">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-			</div>
-			<div class="row mb-5 d-flex justify-content-center">
-				<div class="col-6">
-					<button type="submit" class="btn btn-rainbow mb-3 w-100">Create Action</button>
-				</div>
-			</div>
-		</form>
-	</div>
+  <div class="col-12 mt-2">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            aria-describedby="name-help"
+            formControlName="name"
+            [ngClass]="{ 'is-invalid': name?.invalid && name?.touched }"
+            required
+          />
+          <div id="name-help" class="form-text">Name of campaign.</div>
+          <div class="invalid-feedback">Name are required.</div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-3">
+          <label for="contact" class="form-label">Contact</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contact"
+            aria-describedby="contact-help"
+            formControlName="contact"
+            [ngClass]="{ 'is-invalid': contact?.invalid && contact?.touched }"
+            required
+          />
+          <div id="contact-help" class="form-text">
+            Email or phone to contact you.
+          </div>
+          <div class="invalid-feedback">Email are required.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-3">
+          <div class="col-12">
+            <label for="categories" class="form-label">Category</label>
+            <select
+              class="form-select"
+              multiple
+              aria-label="Select categories"
+              aria-describedby="categories-help"
+              id="categories"
+              name="categories"
+              size="6"
+              formControlName="categories"
+              [ngClass]="{
+                'is-invalid': categories?.invalid && categories?.touched
+              }"
+              required
+            >
+              <option selected>---</option>
+              <option
+                *ngFor="let category of categoriesList"
+                [value]="category?.id"
+              >
+                {{ category?.displayName }}
+              </option>
+            </select>
+            <div id="categories-help" class="form-text">
+              Select one or more categories.
+            </div>
+            <div class="invalid-feedback">
+              One or more categories are required.
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-3">
+          <div
+            class="
+              col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12
+              mb-3
+            "
+          >
+            <label for="localization" class="form-label"> Localization </label>
+            <input
+              type="text"
+              class="form-control"
+              id="localization"
+              name="localization"
+              aria-describedby="localization-help"
+              formControlName="localization"
+              [ngClass]="{
+                'is-invalid': localization?.invalid && localization?.touched
+              }"
+              required
+            />
+            <div id="localization-help" class="form-text">
+              Complete localization(street, number, neighborhood, state,
+              country).
+            </div>
+            <div class="invalid-feedback">Localization are required.</div>
+          </div>
+          <div
+            class="
+              col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12
+              mb-3
+            "
+          >
+            <label for="postal-code" class="form-label"> Postal Code </label>
+            <input
+              type="text"
+              class="form-control"
+              id="postal-code"
+              aria-describedby="postal-code-help"
+              formControlName="postalCode"
+              [ngClass]="{
+                'is-invalid': postalCode?.invalid && postalCode?.touched
+              }"
+              required
+            />
+            <div id="postal-code-help" class="form-text">Zip code.</div>
+            <div class="invalid-feedback">Zip code are required.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <label for="decription" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            aria-label="With textarea"
+            rows="5"
+            aria-describedby="decription-help"
+            id="description"
+            formControlName="description"
+          >
+          </textarea>
+          <div id="decription-help" class="form-text">
+            Some description about the campaign.
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <label for="image" class="form-label">Select Image</label>
+          <input
+            class="form-control"
+            type="file"
+            aria-describedby="image-help"
+            id="image"
+            (change)="upload($event)"
+          />
+          <div id="image-help" class="form-text">Cover to your campaign</div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="teste" *ngIf="imageUploadPorcentage == 100; else noImage">
+            <img
+              [src]="form?.value?.image || 'assets/images/fallback-img.png'"
+              onerror="this.src='assets/images/fallback-img.png'"
+              alt=""
+              class="img-fluid rounded"
+            />
+          </div>
+          <ng-template #noImage>
+            <div class="img-box"></div>
+          </ng-template>
+        </div>
+      </div>
+
+      <div class="row mb-5 d-flex justify-content-center">
+        <div class="col-6">
+          <button
+            type="submit"
+            class="btn btn-rainbow mb-3 w-100"
+            [disabled]="form.invalid"
+            (click)="submit()"
+          >
+            Create Action
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
