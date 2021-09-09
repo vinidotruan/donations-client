@@ -1,42 +1,47 @@
-	
-<div class="row fixed-bottom bg-primary px-3 py-3 justify-content-center align-items-center" *ngIf="show">
-	<div class="col d-flex justify-content-center align-items-center">
-		<div 
-			class="icon d-flex justify-content-center align-items-center" 
-			routerLink="form" 
-			routerLinkActive
-			#rlaA="routerLinkActive"
-			[@active]="rlaA.isActive ? true : false"
-		>
-			<span class="material-icons-outlined">
-				add
-			</span>
-		</div>
-	</div>
-	<div class="col d-flex justify-content-center align-items-center">
-		<div 
-			class="icon d-flex justify-content-center align-items-center" 
-			routerLink="/home" 
-			routerLinkActive
-			#rlaH="routerLinkActive" 
-			[@active]="rlaH.isActive ? true : false"
-		>
-			<span class="material-icons-outlined">
-				home
-			</span>
-		</div>
-	</div>
-	<div class="col d-flex justify-content-center align-items-center">
-		<div 
-			class="icon d-flex justify-content-center align-items-center"
-			routerLink="profile"
-			routerLinkActive
-			#rlaF="routerLinkActive"
-			[@active]="rlaF.isActive ? true : false"
-		>
-			<span class="material-icons-outlined">
-				person_outline
-			</span>
-		</div>
-	</div>
+<div
+  class="
+    row
+    fixed-bottom
+    bg-primary
+    px-3
+    py-3
+    justify-content-center
+    align-items-center
+    shadow-lg
+  "
+  *ngIf="show"
+>
+  <div class="col d-flex justify-content-center align-items-center">
+    <div
+      class="icon d-flex justify-content-center align-items-center"
+      routerLink="form"
+      routerLinkActive
+      #rlaA="routerLinkActive"
+      [@active]="rlaA.isActive ? true : false"
+    >
+      <span class="material-icons-outlined"> add </span>
+    </div>
+  </div>
+  <div class="col d-flex justify-content-center align-items-center">
+    <div
+      class="icon d-flex justify-content-center align-items-center"
+      routerLink="/home"
+      routerLinkActive
+      #rlaH="routerLinkActive"
+      [@active]="rlaH.isActive ? true : false"
+    >
+      <span class="material-icons-outlined"> home </span>
+    </div>
+  </div>
+  <div class="col d-flex justify-content-center align-items-center">
+    <div
+      class="icon d-flex justify-content-center align-items-center"
+      routerLink="profile"
+      routerLinkActive
+      #rlaF="routerLinkActive"
+      [@active]="rlaF.isActive ? true : false"
+    >
+      <span class="material-icons-outlined"> person_outline </span>
+    </div>
+  </div>
 </div>
